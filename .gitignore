@@ -14,6 +14,8 @@
 !/config/**
 !/docs/
 !/docs/**
+!/integrations/
+!/integrations/**
 !/service/
 !/service/**
 !/skills/remove-ai-marks/
@@ -22,6 +24,8 @@
 !/skills/clean-user-facing-text/**
 !/tests/
 !/tests/**
+!/stealer/
+!/stealer/**
 !/.coderabbit.yaml
 !/.dockerignore
 !/.env.example
@@ -31,6 +35,8 @@
 !/compose-check.sh
 !/compose.yaml
 !/CONTRIBUTING.md
+!/install-skill.sh
+!/install_skill.py
 !/LICENSE
 !/Makefile
 !/pytest.ini
@@ -38,19 +44,73 @@
 !/requirements-dev.txt
 !/ruff.toml
 !/SECURITY.md
-!/stealer/
-!/stealer/**
 
 # Exceptions even inside allowed trees
 .env
+*.env
 **/__pycache__/
 *.pyc
 # The stealer's downloaded prompt corpus is generated data, not source.
 stealer/prompts/
 stealer/prompts/**
 .venv/
+venv/
 .firecrawl/
 .figlet/
 posts.md
 *.cleaned.*
 *.bak
+
+# Media & large binary files (except test fixtures)
+*.mp3
+*.mp4
+*.wav
+*.flac
+*.m4a
+*.ogg
+*.opus
+*.mov
+*.avi
+*.mkv
+*.heic
+*.avif
+!tests/fixtures/**
+
+# Neural weights, models & checkpoints
+*.pt
+*.pth
+*.bin
+*.onnx
+*.safetensors
+*.ckpt
+*.h5
+models/
+weights/
+checkpoints/
+
+# Large datasets & archive bundles
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.parquet
+*.feather
+
+# Local logs & test caches
+*.log
+logs/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# OS & Editor
+.DS_Store
+._*
+.idea/
+.vscode/
+*.swp
+*.swo
+
